@@ -2,22 +2,26 @@
   font-family: 'Scheherazade';
   font-style: normal;
   font-weight: 400;
-  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/scheherazade/v2/ScheherazadeRegOT.eot);
+  src: url('ScheherazadeRegOT.ttf') format('truetype');
+  src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/scheherazade/v2/ScheherazadeRegOT.eot) format('embedded-opentype');
   src: url(//themes.googleusercontent.com/static/fonts/earlyaccess/scheherazade/v2/ScheherazadeRegOT.eot?#iefix) format('embedded-opentype'),
   url(//themes.googleusercontent.com/static/fonts/earlyaccess/scheherazade/v2/ScheherazadeRegOT.woff2) format('woff2'),
   url(//themes.googleusercontent.com/static/fonts/earlyaccess/scheherazade/v2/ScheherazadeRegOT.woff) format('woff'),
   url(//themes.googleusercontent.com/static/fonts/earlyaccess/scheherazade/v2/ScheherazadeRegOT.ttf) format('truetype');
 }
 
+body {font-family: 'Scheherazade';}
+p {font-family:'Scheherazade';}
+
 .qdoublespaced {
-	line-height: 2.35em;
+	line-height: 1.95em;
 }
 
 .qarabic {
 	font-family: 'Scheherazade', serif;
 	font-size: 28px;
 	direction: rtl;
-	padding: 25px;
+	padding: 5px;
 	text-align: justify;
-	word-spacing: 2px;
+	word-spacing: 0px;
 }
