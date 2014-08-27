@@ -22,5 +22,4 @@
 	word-spacing: 2px;
 }
 
-p { margin-bottom: 15px; }
 #toTop { position: fixed; bottom: 0px; right: 0px; width: 100%; background-color: #CCC; cursor: pointer; display: none; }
