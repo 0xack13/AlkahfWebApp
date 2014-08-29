@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.parseXML demo</title>
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+ 
+<p id="someElement"></p>
+<p id="anotherElement"></p>
+ 
+<script>
+$(document).ready(function()
+      {
+        $.get('Alkahf-Surah.xml', function(d){
+        $('body').append('<h1> Ayat: </h1>');
+        $('body').append('<dl />');
+ 
+        $(d).find('aya').each(function(){
+ 
+            var $book = $(this); 
+            var title = $book.attr("text");
+ 
+            var html = '';
+            html += '<p> ' + title + '</p>' ;
+ 
+            $('dl').append($(html));
+             
+        });
+    });
+});
+</script>
+ 
+</body>
+</html>
