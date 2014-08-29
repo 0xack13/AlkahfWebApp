@@ -23,5 +23,12 @@ p {font-family:'Scheherazade';}
 	direction: rtl;
 	padding: 5px;
 	text-align: justify;
+<<<<<<< HEAD
 	word-spacing: 0px;
 }
+=======
+	word-spacing: 2px;
+}
+
+#toTop { position: fixed; bottom: 0px; right: 0px; width: 100%; background-color: #CCC; cursor: pointer; display: none; }
+>>>>>>> a93704ec6da07a527402377f2ed772eb4aaae4d7
