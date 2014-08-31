@@ -4,13 +4,27 @@
   <meta charset="utf-8">
   <title>jQuery.parseXML demo</title>
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <title>سورة الكهف</title>
+	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css">
+    <link rel="stylesheet" href="arabic.css">
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+    <script src="app.js"></script>
 </head>
 <body>
  
 <p id="someElement"></p>
 <p id="anotherElement"></p>
+
+<div data-role="page" data-add-back-btn="true" data-back-btn-text="Back">
  
-<script>
+        <div data-role="header">
+            <h1 class="qdoublespaced qarabic">سورة الكهف</h1>
+        </div><!-- /header -->
+ 
+        <div data-role="content">
+        		<script>
 $(document).ready(function()
       {
         $.get('Alkahf-Surah.xml', function(d){
@@ -30,6 +44,10 @@ $(document).ready(function()
     });
 });
 </script>
+        </div>
+</div>
+ 
+
  
 </body>
 </html>
