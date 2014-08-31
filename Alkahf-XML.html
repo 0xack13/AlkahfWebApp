@@ -25,21 +25,38 @@
  
         <div data-role="content">
         		<script>
+                function convertDigitIn(enDigit){
+                    var newValue="";
+                    for (var i=0;i<enDigit.length;i++)
+                    {
+                        var ch=enDigit.charCodeAt(i);
+                        if (ch>=48 && ch<=57)
+                        {
+                            // european digit range
+                            var newChar=ch+1584;
+                            newValue=newValue+String.fromCharCode(newChar);
+                        }
+                        else
+                            newValue=newValue+String.fromCharCode(ch);
+                    }
+                    return '﴿' + newValue + '﴾';
+                }
 $(document).ready(function()
       {
         $.get('Alkahf-Surah.xml', function(d){
-        $('body').append('<h1> Ayat: </h1>');
+        //$('body').append('<h1> Ayat: </h1>');
         $('body').append('<dl />');
  
         $(d).find('aya').each(function(){
  
             var $book = $(this); 
-            var title = $book.attr("text");
+            var ayaText = $book.attr("text");
+            var ayaNum = $book.attr("index");
  
             var html = '';
-            html += '<p> ' + title + '</p>' ;
+            html += '<p class="qdoublespaced qarabic"> ' + ayaText + ' ' + convertDigitIn(ayaNum) + ' </p>' ;
 
-            $('dl').append($(html));             
+           $('dl').append($(html));             
         });
     });
 });
