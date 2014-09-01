@@ -2,28 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>jQuery.parseXML demo</title>
+  <title>سورة الكهف</title>
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
   <title>سورة الكهف</title>
 	<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css">
     <link rel="stylesheet" href="arabic.css">
+        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
     <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
     <script src="app.js"></script>
 </head>
 <body>
- 
-<p id="someElement"></p>
-<p id="anotherElement"></p>
 
 <div data-role="page" data-add-back-btn="true" data-back-btn-text="Back">
  
         <div data-role="header">
             <h1 class="qdoublespaced qarabic">سورة الكهف</h1>
         </div><!-- /header -->
- 
+        
         <div data-role="content">
+        <p id="someElement"></p>
+
         		<script>
                 function convertDigitIn(enDigit){
                     var newValue="";
@@ -44,7 +45,7 @@
 $(document).ready(function()
       {
         $.get('Alkahf-Surah.xml', function(d){
-        //$('body').append('<h1> Ayat: </h1>');
+        $('body').append('<h1> Ayat: </h1>');
         $('body').append('<dl />');
  
         $(d).find('aya').each(function(){
@@ -56,14 +57,19 @@ $(document).ready(function()
             var html = '';
             html += '<p class="qdoublespaced qarabic"> ' + ayaText + ' ' + convertDigitIn(ayaNum) + ' </p>' ;
 
-           $('dl').append($(html));             
+           $('#someElement').append($(html));             
         });
     });
 });
 </script>
-        </div>
-</div>
+     <div id="toTop">Back to Top</div>
+ </div>
+        <div data-role="footer">
+            <h4>صدق الله العظيم</h4>
+        </div><!-- /footer -->
  
+    </div><!-- /page -->
+</body>
 
  
 </body>
