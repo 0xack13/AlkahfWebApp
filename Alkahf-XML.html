@@ -75,9 +75,15 @@ $(document).ready(function()
         });
 
         $( "span" ).on( "click", function() {
+<<<<<<< HEAD
           var spancolor = $( this ).css( "color" );
           console.log(spancolor);
           if(spancolor == 'rgb(0, 128, 0)')
+=======
+          var color = $( this ).css( "color" );
+          console.log(color);
+          if(hexc(color) == "#333333")
+>>>>>>> f4269887eacfa16b987e11d49b4dfaee58de07c3
             $( this ).css( "color", "red" );
           else    
             $( this ).css( "color", "green" );
