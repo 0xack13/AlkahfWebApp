@@ -12,6 +12,9 @@
 
 body {font-family: 'Scheherazade';}
 p {font-family:'Scheherazade';}
+p:hover {
+    background: yellow;
+}
 
 .qdoublespaced {
 	line-height: 1.95em;
