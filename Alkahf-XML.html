@@ -42,6 +42,20 @@
                     }
                     return '﴿' + newValue + '﴾';
                 }
+
+                function hexc(colorval) {
+                    var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+                    delete(parts[0]);
+                    for (var i = 1; i <= 3; ++i) {
+                        parts[i] = parseInt(parts[i]).toString(16);
+                        if (parts[i].length == 1) parts[i] = '0' + parts[i];
+                    }
+                    color = '#' + parts.join('');
+                    console.log(color);
+                }
+
+                
+
 $(document).ready(function()
       {
         $.get('Alkahf-Surah.xml', function(d){
@@ -55,11 +69,24 @@ $(document).ready(function()
             var ayaNum = $book.attr("index");
  
             var html = '';
-            html += '<p class="qdoublespaced qarabic"> ' + ayaText + ' ' + convertDigitIn(ayaNum) + ' </p>' ;
+            html += '<span class="qdoublespaced qarabic"> ' + ayaText + ' ' + convertDigitIn(ayaNum) + ' </span>' ;
 
            $('#someElement').append($(html));             
         });
+
+        $( "span" ).on( "click", function() {
+          var spancolor = $( this ).css( "color" );
+          console.log(spancolor);
+          if(spancolor == 'rgb(0, 128, 0)')
+            $( this ).css( "color", "red" );
+          else    
+            $( this ).css( "color", "green" );
+        });
+
     });
+    
+
+
 });
 </script>
      <div id="toTop">Back to Top</div>
