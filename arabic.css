@@ -11,8 +11,10 @@
 }
 
 body {font-family: 'Scheherazade';}
-p {font-family:'Scheherazade';
+p, a {font-family:'Scheherazade';
 text-align: justify;
+text-decoration: none;
+color: black;
   }
 
 
@@ -29,7 +31,7 @@ text-align: justify;
 	word-spacing: 2px;
 }
 
-span:hover {
+span:hover, a:hover{
   background: yellow;
 }
 
