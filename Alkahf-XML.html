@@ -42,6 +42,9 @@
                     }
                     return '﴿' + newValue + '﴾';
                 }
+
+                
+
 $(document).ready(function()
       {
         $.get('Alkahf-Surah.xml', function(d){
@@ -55,16 +58,19 @@ $(document).ready(function()
             var ayaNum = $book.attr("index");
  
             var html = '';
-            html += '<span class="qdoublespaced qarabic"> ' + ayaText + ' ' + convertDigitIn(ayaNum) + ' </span>' ;
+            html += '<span onclick="changeBackground();" class="qdoublespaced qarabic"> ' + ayaText + ' ' + convertDigitIn(ayaNum) + ' </span>' ;
 
            $('#someElement').append($(html));             
         });
-        /*
-        $( "p" ).click(function() {
-		  $(this);
-		});*/
+
+        $( "span" ).on( "click", function() {
+          $( this ).css( "color", "green" );
+        });
 
     });
+    
+
+
 });
 </script>
      <div id="toTop">Back to Top</div>
