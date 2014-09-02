@@ -43,6 +43,17 @@
                     return '﴿' + newValue + '﴾';
                 }
 
+                function hexc(colorval) {
+                    var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+                    delete(parts[0]);
+                    for (var i = 1; i <= 3; ++i) {
+                        parts[i] = parseInt(parts[i]).toString(16);
+                        if (parts[i].length == 1) parts[i] = '0' + parts[i];
+                    }
+                    color = '#' + parts.join('');
+                    console.log(color);
+                }
+
                 
 
 $(document).ready(function()
@@ -64,7 +75,12 @@ $(document).ready(function()
         });
 
         $( "span" ).on( "click", function() {
-          $( this ).css( "color", "green" );
+          var color = $( this ).css( "color" );
+          console.log(color);
+          if(hexc(color) == "#333333")
+            $( this ).css( "color", "red" );
+          else    
+            $( this ).css( "color", "green" );
         });
 
     });
