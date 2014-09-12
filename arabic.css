@@ -30,7 +30,7 @@ body {
 }
 
 h1 {
-  font-size: 33px !important;
+  font-size: 25px !important;
 }
 
 p, a {
@@ -54,7 +54,7 @@ p, a {
 }
 
 span:hover, a:hover{
-  color: green;
+  color: moron;
   background-color: yellow;
 }
 

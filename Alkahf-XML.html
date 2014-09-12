@@ -69,13 +69,14 @@ $(document).ready(function()
             var ayaNum = $book.attr("index");
  
             var html = '';
-            html += '<a href="#' + ayaNum + '" class="qdoublespaced qarabic" style="text-shadow: none"' + '<span id="' + ayaNum + '" class="qdoublespaced qarabic"> ' + ayaText + ' ' + convertDigitIn(ayaNum) + ' </span></a>' ;
+            html += '<a href="#' + ayaNum + '" class="qdoublespaced qarabic" style="text-shadow: none;"' + '<span id="' + ayaNum + '" class="qdoublespaced qarabic"> ' + ayaText + ' ' + convertDigitIn(ayaNum) + ' </span></a>' ;
 
            $('#someElement').append($(html));             
         });
 
         $( "a" ).on( "click", function() {
           var spancolor = $( this ).css( "color" );
+          $( this ).css( "background", "orange" );
           console.log(spancolor);
           if(spancolor == 'rgb(0, 128, 0)')
             $( this ).css( "color", "red" );
