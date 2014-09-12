@@ -1,3 +1,16 @@
+.ui-body-c, .ui-overlay-c { background:beige; 
+
+background: rgba(241,231,103,1);
+background: -moz-linear-gradient(top, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(241,231,103,1)), color-stop(100%, rgba(254,182,69,1)));
+background: -webkit-linear-gradient(top, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+background: -o-linear-gradient(top, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+background: -ms-linear-gradient(top, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+background: linear-gradient(to bottom, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', endColorstr='#feb645', GradientType=0 );
+
+}
+
 @font-face {
   font-family: 'Scheherazade';
   font-style: normal;
@@ -12,20 +25,20 @@
 
 body {
   font-family: 'Scheherazade';
+  background-color: Moccasin;
   
+}
+
+h1 {
+  font-size: 33px !important;
 }
 
 p, a {
   font-family:'Scheherazade';
   text-align: justify;
   text-decoration: none;
-  
+  color: black;
 }
-
-#element.style {
-  background-color: black;
-}
-
 
 .qdoublespaced {
 	line-height: 1.95em;
@@ -41,7 +54,8 @@ p, a {
 }
 
 span:hover, a:hover{
-  color: white;
+  color: green;
+  background-color: yellow;
 }
 
 #toTop { position: fixed; bottom: 0px; right: 0px; width: 100%; background-color: #CCC; cursor: pointer; display: none; }
