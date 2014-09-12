@@ -12,15 +12,18 @@
 
 body {
   font-family: 'Scheherazade';
-  background-color: black !important;
-  color: white;
+  
 }
 
 p, a {
   font-family:'Scheherazade';
   text-align: justify;
   text-decoration: none;
-  color: white;
+  
+}
+
+#element.style {
+  background-color: black;
 }
 
 
