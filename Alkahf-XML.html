@@ -69,7 +69,7 @@ $(document).ready(function()
             var ayaNum = $book.attr("index");
  
             var html = '';
-            html += '<a href="#' + ayaNum + '" class="qdoublespaced qarabic"' + '<span id="' + ayaNum + '" class="qdoublespaced qarabic"> ' + ayaText + ' ' + convertDigitIn(ayaNum) + ' </span></a>' ;
+            html += '<a href="#' + ayaNum + '" class="qdoublespaced qarabic" style="text-shadow: none"' + '<span id="' + ayaNum + '" class="qdoublespaced qarabic"> ' + ayaText + ' ' + convertDigitIn(ayaNum) + ' </span></a>' ;
 
            $('#someElement').append($(html));             
         });
