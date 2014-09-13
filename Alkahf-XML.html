@@ -82,6 +82,7 @@
                             //console.log("Document: " + docHeight + " - Windows: " + $window.height());
                             console.log("x: " + x);
                             bar.css('background', '-webkit-linear-gradient(left, red '+ x +'%, green '+ x +'%)');
+                            $('#barPer').text( Math.round(x) + "%" );
                         });
 
                         
@@ -91,7 +92,7 @@
 </head>
 <body>
 <div class="content" data-role="page" data-add-back-btn="true" data-back-btn-text="Back">
-        <div id="bar"></div>
+        <div id="bar"><span id="barPer"></span></div>
         <div data-role="header">
             <h1 class="qdoublespaced qarabic">سورة الكهف</h1>
         </div>
