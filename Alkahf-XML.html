@@ -37,7 +37,6 @@
                         if (parts[i].length == 1) parts[i] = '0' + parts[i];
                     }
                     color = '#' + parts.join('');
-                    console.log(color);
                 }                
                 $(document).ready(function()
                       {
@@ -59,7 +58,6 @@
                         $( "a" ).on( "click", function() {
                           var spancolor = $( this ).css( "color" );
                           $( this ).css( "background", "orange" );
-                          console.log(spancolor);
                           if(spancolor == 'rgb(0, 128, 0)')
                             $( this ).css( "color", "red" );
                           else    
@@ -68,11 +66,10 @@
 
                         var bar = $('#bar'),
                             $window = $(window),
-                            docHeight = $(document).height(),
-                            baseX = $window.height() / docHeight * 100;
-                            console.log("Document: " + docHeight + " - Windows: " + $window.height());
-
-                        bar.css('background', '-webkit-linear-gradient(left, red '+ baseX +'%, green '+ baseX +'%)');
+                            docHeight = $(document).height();
+                            //Not working anymore. Actually, working but not perfect.
+                            //baseX = $window.height() / docHeight * 100;
+                            //bar.css('background', '-webkit-linear-gradient(left, red '+ baseX +'%, green '+ baseX +'%)');
 
                         $window.scroll(function(e) {      
                             // Not working, watch out
