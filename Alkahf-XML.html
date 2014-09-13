@@ -9,23 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css">
     <link rel="stylesheet" href="arabic.css">
-        <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
-
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
     <script src="app.js"></script>
-</head>
-<body>
-        
-<div data-role="page" data-add-back-btn="true" data-back-btn-text="Back">
-        <div id="bar"></div>
-        <div data-role="header">
-            <h1 class="qdoublespaced qarabic">سورة الكهف</h1>
-        </div><!-- /header -->
-        
-        <div data-role="content">
-        
-        <p id="someElement"></p>
-        	<script>
+      <script>
                 function convertDigitIn(enDigit){
                     var newValue="";
                     for (var i=0;i<enDigit.length;i++)
@@ -55,7 +42,6 @@
                 $(document).ready(function()
                       {
                         $.get('Alkahf-Surah.xml', function(d){
-                        $('body').append('<h1> Ayat: </h1>');
                         $('body').append('<dl />');
                  
                         $(d).find('aya').each(function(){
@@ -65,9 +51,9 @@
                             var ayaNum = $book.attr("index");
                  
                             var html = '';
-                            html += '<a href="#' + ayaNum + '" class="qdoublespaced qarabic" style="text-shadow: none;"' + '<span id="' + ayaNum + '" class="qdoublespaced qarabic"> ' + ayaText + ' ' + convertDigitIn(ayaNum) + ' </span></a>' ;
+                            html += '<a href="#' + ayaNum + '" class=" qdoublespaced qarabic" style="text-shadow: none;"' + '<span id="' + ayaNum + '" class="qdoublespaced qarabic"> ' + ayaText + ' ' + convertDigitIn(ayaNum) + ' </span></a>' ;
 
-                           $('#someElement').append($(html));             
+                           $('#ayat').append($(html));             
                         });
 
                         $( "a" ).on( "click", function() {
@@ -89,29 +75,34 @@
                         bar.css('background', '-webkit-linear-gradient(left, red '+ baseX +'%, green '+ baseX +'%)');
 
                         $window.scroll(function(e) {      
-                            var x = $window.scrollTop() / docHeight * 100 + baseX;
+                            // Not working, watch out
+                            //var x = $(window).scrollTop() / docHeight * 100 + baseX;
+                            var x = 100 * $(window).scrollTop() / ($(document).height() - $(window).height());
+                            console.log("Windows scrolltop:" + $(window).scrollTop());
+                            console.log("Document: " + docHeight + " - Windows: " + $window.height());
+                            console.log("x: " + x);
                             bar.css('background', '-webkit-linear-gradient(left, red '+ x +'%, green '+ x +'%)');
                         });
 
+                        
                     });
-
-        
-                    
-
-
                 });
 </script>
-     <div id="toTop">Back to Top</div>
- </div>
-
+</head>
+<body>
+<div class="content" data-role="page" data-add-back-btn="true" data-back-btn-text="Back">
+        <div id="bar"></div>
+        <div data-role="header">
+            <h1 class="qdoublespaced qarabic">سورة الكهف</h1>
+        </div>
+                <div data-role="content">        
+                    <p id="ayat"></p>
+                    <div id="toTop">Back to Top</div>
+                </div>
         <div data-role="footer">
             <h4>صدق الله العظيم</h4>
-        </div><!-- /footer -->
- 
-    </div><!-- /page -->
-
-</body>
-
- 
+        </div>
+    </div>
+</div>
 </body>
 </html>
