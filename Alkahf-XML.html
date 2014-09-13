@@ -15,7 +15,7 @@
     <script src="app.js"></script>
 </head>
 <body>
-
+<div id="bar"></div>
 <div data-role="page" data-add-back-btn="true" data-back-btn-text="Back">
  
         <div data-role="header">
@@ -58,6 +58,19 @@
 
 $(document).ready(function()
       {
+        var bar = $('#bar'),
+        $window = $(window),
+        docHeight = $(document).height(),
+        baseX = $window.height() / docHeight * 100;
+
+        bar.css('background', '-webkit-linear-gradient(left, white '+ baseX +'%, yellow '+ baseX +'%)');
+
+        $window.scroll(function(e) {      
+            var x = $window.scrollTop() / docHeight * 100 + baseX;
+            console.log(x + " doc docHeight: " + docHeight);
+            bar.css('background', '-webkit-linear-gradient(left, white '+ x +'%, yellow '+ x +'%)');
+        });
+
         $.get('Alkahf-Surah.xml', function(d){
         $('body').append('<h1> Ayat: </h1>');
         $('body').append('<dl />');
@@ -92,11 +105,13 @@ $(document).ready(function()
 </script>
      <div id="toTop">Back to Top</div>
  </div>
+
         <div data-role="footer">
             <h4>صدق الله العظيم</h4>
         </div><!-- /footer -->
  
     </div><!-- /page -->
+
 </body>
 
  

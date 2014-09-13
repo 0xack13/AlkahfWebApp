@@ -58,4 +58,11 @@ span:hover, a:hover{
   background-color: yellow;
 }
 
+#bar{
+    position:fixed;
+    background-color:red;
+    width:100%;
+    height:10px;
+}
+
 #toTop { position: fixed; bottom: 0px; right: 0px; width: 100%; background-color: #CCC; cursor: pointer; display: none; }
