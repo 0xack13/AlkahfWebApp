@@ -1,5 +1,6 @@
-.ui-body-c, .ui-overlay-c { background:beige; 
+.ui-body-c, .ui-overlay-c {
 
+background:beige;
 background: rgba(241,231,103,1);
 background: -moz-linear-gradient(top, rgba(241,231,103,1) 0%, rgba(254,182,69,1) 100%);
 background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(241,231,103,1)), color-stop(100%, rgba(254,182,69,1)));
@@ -26,7 +27,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1e767', end
 body {
   font-family: 'Scheherazade';
   background-color: Moccasin;
-  
 }
 
 h1 {
@@ -58,11 +58,12 @@ span:hover, a:hover{
   background-color: yellow;
 }
 
-#bar{
+#bar {
     position:fixed;
-    background-color:red;
+    background-color:red !important;
     width:100%;
-    height:10px;
+    height:20px;
+    z-index: 1000;
 }
 
 #toTop { position: fixed; bottom: 0px; right: 0px; width: 100%; background-color: #CCC; cursor: pointer; display: none; }

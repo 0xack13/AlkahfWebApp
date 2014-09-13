@@ -15,17 +15,17 @@
     <script src="app.js"></script>
 </head>
 <body>
-<div id="bar"></div>
+        
 <div data-role="page" data-add-back-btn="true" data-back-btn-text="Back">
- 
+        <div id="bar"></div>
         <div data-role="header">
             <h1 class="qdoublespaced qarabic">سورة الكهف</h1>
         </div><!-- /header -->
         
         <div data-role="content">
+        
         <p id="someElement"></p>
-
-        		<script>
+        	<script>
                 function convertDigitIn(enDigit){
                     var newValue="";
                     for (var i=0;i<enDigit.length;i++)
@@ -42,7 +42,6 @@
                     }
                     return '﴿' + newValue + '﴾';
                 }
-
                 function hexc(colorval) {
                     var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
                     delete(parts[0]);
@@ -52,56 +51,55 @@
                     }
                     color = '#' + parts.join('');
                     console.log(color);
-                }
+                }                
+                $(document).ready(function()
+                      {
+                        $.get('Alkahf-Surah.xml', function(d){
+                        $('body').append('<h1> Ayat: </h1>');
+                        $('body').append('<dl />');
+                 
+                        $(d).find('aya').each(function(){
+                 
+                            var $book = $(this); 
+                            var ayaText = $book.attr("text");
+                            var ayaNum = $book.attr("index");
+                 
+                            var html = '';
+                            html += '<a href="#' + ayaNum + '" class="qdoublespaced qarabic" style="text-shadow: none;"' + '<span id="' + ayaNum + '" class="qdoublespaced qarabic"> ' + ayaText + ' ' + convertDigitIn(ayaNum) + ' </span></a>' ;
 
-                
+                           $('#someElement').append($(html));             
+                        });
 
-$(document).ready(function()
-      {
-        var bar = $('#bar'),
-        $window = $(window),
-        docHeight = $(document).height(),
-        baseX = $window.height() / docHeight * 100;
+                        $( "a" ).on( "click", function() {
+                          var spancolor = $( this ).css( "color" );
+                          $( this ).css( "background", "orange" );
+                          console.log(spancolor);
+                          if(spancolor == 'rgb(0, 128, 0)')
+                            $( this ).css( "color", "red" );
+                          else    
+                            $( this ).css( "color", "green" );
+                        });
 
-        bar.css('background', '-webkit-linear-gradient(left, white '+ baseX +'%, yellow '+ baseX +'%)');
+                        var bar = $('#bar'),
+                            $window = $(window),
+                            docHeight = $(document).height(),
+                            baseX = $window.height() / docHeight * 100;
+                            console.log("Document: " + docHeight + " - Windows: " + $window.height());
 
-        $window.scroll(function(e) {      
-            var x = $window.scrollTop() / docHeight * 100 + baseX;
-            console.log(x + " doc docHeight: " + docHeight);
-            bar.css('background', '-webkit-linear-gradient(left, white '+ x +'%, yellow '+ x +'%)');
-        });
+                        bar.css('background', '-webkit-linear-gradient(left, red '+ baseX +'%, green '+ baseX +'%)');
 
-        $.get('Alkahf-Surah.xml', function(d){
-        $('body').append('<h1> Ayat: </h1>');
-        $('body').append('<dl />');
- 
-        $(d).find('aya').each(function(){
- 
-            var $book = $(this); 
-            var ayaText = $book.attr("text");
-            var ayaNum = $book.attr("index");
- 
-            var html = '';
-            html += '<a href="#' + ayaNum + '" class="qdoublespaced qarabic" style="text-shadow: none;"' + '<span id="' + ayaNum + '" class="qdoublespaced qarabic"> ' + ayaText + ' ' + convertDigitIn(ayaNum) + ' </span></a>' ;
+                        $window.scroll(function(e) {      
+                            var x = $window.scrollTop() / docHeight * 100 + baseX;
+                            bar.css('background', '-webkit-linear-gradient(left, red '+ x +'%, green '+ x +'%)');
+                        });
 
-           $('#someElement').append($(html));             
-        });
+                    });
 
-        $( "a" ).on( "click", function() {
-          var spancolor = $( this ).css( "color" );
-          $( this ).css( "background", "orange" );
-          console.log(spancolor);
-          if(spancolor == 'rgb(0, 128, 0)')
-            $( this ).css( "color", "red" );
-          else    
-            $( this ).css( "color", "green" );
-        });
-
-    });
-    
+        
+                    
 
 
-});
+                });
 </script>
      <div id="toTop">Back to Top</div>
  </div>
