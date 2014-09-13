@@ -74,9 +74,12 @@
                         $window.scroll(function(e) {      
                             // Not working, watch out
                             //var x = $(window).scrollTop() / docHeight * 100 + baseX;
+                            //Window = the browser window that you see
+                            //Document = thw Whole HTML document
+
                             var x = 100 * $(window).scrollTop() / ($(document).height() - $(window).height());
-                            console.log("Windows scrolltop:" + $(window).scrollTop());
-                            console.log("Document: " + docHeight + " - Windows: " + $window.height());
+                            //console.log("Windows scrolltop:" + $(window).scrollTop());
+                            //console.log("Document: " + docHeight + " - Windows: " + $window.height());
                             console.log("x: " + x);
                             bar.css('background', '-webkit-linear-gradient(left, red '+ x +'%, green '+ x +'%)');
                         });
