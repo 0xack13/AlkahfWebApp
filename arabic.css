@@ -66,4 +66,4 @@ span:hover, a:hover{
     z-index: 1000;
 }
 
-#toTop { position: fixed; bottom: 0px; right: 0px; width: 100%; background-color: #CCC; cursor: pointer; display: none; }
+#toTop { position: fixed; height: 10%; bottom: 0px; right: 0px; width: 100%; background-color: #CCC; cursor: pointer; display: none; }
