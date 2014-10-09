@@ -13,6 +13,7 @@
     <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
     <script src="app.js"></script>
       <script>
+                
                 function convertDigitIn(enDigit){
                     var newValue="";
                     for (var i=0;i<enDigit.length;i++)
@@ -29,6 +30,25 @@
                     }
                     return '﴿' + newValue + '﴾';
                 }
+
+                function plainConvertDigitIn(enDigit){
+                    var newValue="";
+                    for (var i=0;i<enDigit.length;i++)
+                    {
+                        var ch=enDigit.charCodeAt(i);
+                        if (ch>=48 && ch<=57)
+                        {
+                            // european digit range
+                            var newChar=ch+1584;
+                            newValue=newValue+String.fromCharCode(newChar);
+                        }
+                        else
+                            newValue=newValue+String.fromCharCode(ch);
+                    }
+                    return '%' + newValue;
+                }
+
+                
                 function hexc(colorval) {
                     var parts = colorval.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
                     delete(parts[0]);
@@ -86,7 +106,9 @@
                             //console.log("Document: " + docHeight + " - Windows: " + $window.height());
                             console.log("x: " + x);
                             bar.css('background', '-webkit-linear-gradient(left, red '+ x +'%, green '+ x +'%)');
-                            $('#barPer').text( Math.round(x) + "%" );
+                            var convertedNum = Math.floor(x);
+                            console.log("converted Num: " + plainConvertDigitIn(convertedNum.toString()));
+                            $('#barPer').text(  plainConvertDigitIn(convertedNum.toString()) );
                         });
 
                         
