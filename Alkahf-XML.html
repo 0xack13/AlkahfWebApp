@@ -58,8 +58,12 @@
                         $( "a" ).on( "click", function() {
                           var spancolor = $( this ).css( "color" );
                           $( this ).css( "background", "orange" );
-                          if(spancolor == 'rgb(0, 128, 0)')
-                            $( this ).css( "color", "red" );
+                          if(spancolor == 'rgb(0, 128, 0)') {
+                            //Reset everything back to default values
+                            //TODO: Add note on the second click for each Aya
+                            $( this ).css( "color", "" );
+                            $( this ).css( "background", "" );
+                            }
                           else    
                             $( this ).css( "color", "green" );
                         });
