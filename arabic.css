@@ -71,4 +71,4 @@ span:hover, a:hover{
     z-index: 1000;
 }
 
-#toTop { position: fixed; height: 10%; bottom: 0px; right: 0px; width: 100%; background-color: black; cursor: pointer; display: none; }
+#toTop { position: fixed; height: 5%; bottom: 0px; right: 0px; width: 100%; background-color: black; cursor: pointer; display: none; }
