@@ -63,6 +63,13 @@ span:hover, a:hover{
   background-color: black !important;
 }
 
+.headerSura {
+  color: white;
+  z-index: 1;
+  margin-top: 22px;
+  padding-top: 22px;
+}
+
 #bar {
     text-shadow: none;
     position:fixed;
