@@ -83,4 +83,10 @@ span:hover, a:hover{
     font-size: 28px;
 }
 
+.glyphicon {
+    font-size: 35px;
+    color: white;
+    vertical-align: middle;
+}
+
 #toTop { position: fixed; height: 5%; bottom: 0px; right: 0px; width: 100%; background-color: black; cursor: pointer; display: none; }
