@@ -59,6 +59,10 @@ span:hover, a:hover{
   background-color: yellow;
 }
 
+span{
+  vertical-align: middle;
+}
+
 .footer {
   background-color: black !important;
 }
@@ -84,9 +88,20 @@ span:hover, a:hover{
 }
 
 .glyphicon {
-    font-size: 35px;
+    font-size: 30px;
     color: white;
     vertical-align: middle;
+    margin: 20,20,20,20px;
 }
 
-#toTop { position: fixed; height: 5%; bottom: 0px; right: 0px; width: 100%; background-color: black; cursor: pointer; display: none; }
+#toTop { 
+  position: fixed; 
+  height: 7%;
+  bottom: 0px;
+  right: 0px;
+  width: 100%;
+  background-color: black;
+  cursor: pointer;
+  display: none; 
+  vertical-align: middle;
+}
