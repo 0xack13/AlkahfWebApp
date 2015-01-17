@@ -37,7 +37,7 @@ p, a {
   font-family:'Scheherazade';
   text-align: justify;
   text-decoration: none !important;
-  color: black !important;
+  color: black;
   direction: rtl;
 }
 
@@ -55,7 +55,7 @@ p, a {
 }
 
 span:hover, a:hover{
-  color: green;
+  color: black;
   background-color: yellow;
 }
 

@@ -79,15 +79,20 @@
 
                         $( "a" ).on( "click", function() {
                           var spancolor = $( this ).css( "color" );
+                          console.log("Span Color: " + spancolor);
                           $( this ).css( "background", "orange" );
                           if(spancolor == 'rgb(0, 128, 0)') {
                             //Reset everything back to default values
                             //TODO: Add note on the second click for each Aya
-                            $( this ).css( "color", "#008000" );
+                            console.log("Entered Green!");
+                            $( this ).css( "color", "black" );
                             $( this ).css( "background", "" );
                             }
                           else    
-                            $( this ).css( "color", "black" );
+                            {
+                                console.log("Entered Black!");
+                                $( this ).css( "color", "green" );
+                            }
                         });
 
                         var bar = $('#bar'),
