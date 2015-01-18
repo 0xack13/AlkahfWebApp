@@ -80,7 +80,11 @@ span{
   clear: both;
 }
 
-
+.basmalah 
+{
+  text-align: center;
+  color: black !important;
+}
 
 #bar {
     text-shadow: none;
